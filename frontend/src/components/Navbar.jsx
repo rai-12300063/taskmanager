@@ -11,31 +11,51 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-blue-600 text-white p-4 flex justify-between items-center">
-      <Link to="/" className="text-2xl font-bold">Task Manager</Link>
-      <div>
-        {user ? (
-          <>
-            <Link to="/tasks" className="mr-4">Tasks</Link>
-            <Link to="/profile" className="mr-4">Profile</Link>
-            <button
-              onClick={handleLogout}
-              className="bg-red-500 px-4 py-2 rounded hover:bg-red-700"
-            >
-              Logout
-            </button>
-          </>
-        ) : (
-          <>
-            <Link to="/login" className="mr-4">Login</Link>
-            <Link
-              to="/register"
-              className="bg-green-500 px-4 py-2 rounded hover:bg-green-700"
-            >
-              Register
-            </Link>
-          </>
-        )}
+    <nav className="bg-gradient-to-r from-blue-600 to-purple-700 text-white p-4 shadow-lg">
+      <div className="container mx-auto flex justify-between items-center">
+        <Link to="/" className="text-2xl font-bold flex items-center">
+          📚 Learning Progress Tracker
+        </Link>
+        <div className="flex items-center space-x-4">
+          {user ? (
+            <>
+              <span className="text-sm opacity-90">Welcome, {user.name}!</span>
+              <Link 
+                to="/tasks" 
+                className="hover:bg-white hover:bg-opacity-20 px-3 py-2 rounded transition-colors"
+              >
+                My Learning
+              </Link>
+              <Link 
+                to="/profile" 
+                className="hover:bg-white hover:bg-opacity-20 px-3 py-2 rounded transition-colors"
+              >
+                Profile
+              </Link>
+              <button
+                onClick={handleLogout}
+                className="bg-red-500 px-4 py-2 rounded hover:bg-red-600 transition-colors"
+              >
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <Link 
+                to="/login" 
+                className="hover:bg-white hover:bg-opacity-20 px-3 py-2 rounded transition-colors"
+              >
+                Login
+              </Link>
+              <Link
+                to="/register"
+                className="bg-green-500 px-4 py-2 rounded hover:bg-green-600 transition-colors"
+              >
+                Get Started
+              </Link>
+            </>
+          )}
+        </div>
       </div>
     </nav>
   );
