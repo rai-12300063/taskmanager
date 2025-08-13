@@ -42,8 +42,6 @@ const Tasks = () => {
     }
   });
 
-  const categories = [...new Set(tasks.map(task => task.category))];
-
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="container mx-auto p-6">
